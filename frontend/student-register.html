@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <title>Tutor Connect</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav class="nav">
+            <span class="brand">
+                TuConnect
+            </span>
+            <ul>
+               
+            </ul>
+            
+        </nav>
+    </div>
+  <div class="container">
+      <h1>Register</h1>
+      
+<form action="/student/register" method="POST" enctype="multipart/form-data">
+	
+	<input type="text" name="name" class="form-control" placeholder="Name" required>
+	
+	<input type="username" name="username" class="form-control" placeholder="Username"  required>
+	
+	<input type="email" name="email" class="form-control" placeholder="Email"  required>
+
+	<input type="password" name="password" class="form-control" placeholder="Password"  required>
+	
+	<input type="date" name="DATE" class="form-control" placeholder="Date of Birth"  required>
+    <h3>Current Education</h3>
+    <div>
+        <input type="radio" id="School" name="EDUCATION" value="School" >
+        <label for="School">School</label><br>
+    </div>
+    <div>
+        <input type="radio" id="Junior College" name="EDUCATION" value="Junior College" >
+        <label for="Junior College">Junior College</label><br>
+    </div>
+    <div>
+        	
+	  <input type="radio" id="University" name="EDUCATION" value="University" >
+	  <label for="University">University</label><br>
+    </div>
+	 
+
+	
+	  
+	
+	<input type="file" name="DP" VALUE="https://image.shutterstock.com/image-vector/unknown-user-profile-600w-1228715254.jpg" >
+	<h3>Profile Picture</h3>
+	
+	<input type="submit">
+	<p>
+	</p>
+</form>
+  </div>
+
+
+   
+
+
+
+
+    <a href="/student/login">Student Login</a>
+    <a href="/student/register">Student register</a>
+    <a href="/teacher/login">Teacher Login</a>
+    <a href="">teacher register</a>
+    <script src="script.js"></script>
+</body>
+
+</html>
