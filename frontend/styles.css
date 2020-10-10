@@ -33,13 +33,14 @@ body{
     display: inline;
     padding: 0 0.5rem;
 }
-.nav>ul>li>a{
+.nav>ul>li>a, button, input[type="submit"]{
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
     background-color:#320605;
     border-radius:5px;
     
+    border: none;
 }
 
 .container{
@@ -76,14 +77,49 @@ h1{
 form{
     display: flex;
     flex-direction: column;
+    
 }
 
-.form-control{
+.form-control, .form-control:focus, select{
     padding: 0.5rem 1rem;
-    margin-bottom: 0.5rem;
-    width: 250px;
-    max-width: 90%;
-    border: 1px solid #e7e7e7;
+    margin: 0.5rem 0;
+    width: 450px;
+    max-width: 100%;
+    border: 1px solid rgb(50,6,5, 0.5);
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
+}
+input[type="submit"]{
+    width: 200px;
+}
+div.submit{
+    text-align: center;
+}
+input[type="file"]{
+    color: #161616;
+}
+.hide{
+    display: none;
+}
+
+.picture-upload>.profile-picture{  
+    
+    width: 250px;
+    max-width: 90%;
+    margin: 1rem;
+    height: auto;
+    object-fit: cover;
+   
+}
+.picture-upload{
+    text-align: center; 
+}
+.some{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }

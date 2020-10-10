@@ -1,50 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Tutor Connect</title>
+</head>
+ 
+<body>
 
+    <div class="navbar-container">
+        <nav class="nav">
+            <span class="brand">
+                TuConnect
+            </span>
+            <ul>
+                <li>
+                    <a href="login" class="nav-link">
+ 
+                        Login</a>
+                </li>
+ 
+            </ul>
+ 
+        </nav>
+    </div>
+    <div class = "container">
 <h1>
-	TEACHER REGISTER HERE
+	Teacher Registration
 </h1>
-<div class="container infoforms">
-	<div style="width:30%;margin:0 auto">
+
+<div class="infoforms">
 
 <form action="/teacher/register" method="POST" enctype="multipart/form-data">
-	Name
-	<input type="text" name="name" class="form-control">
-	<p> 
-	</p>
-	Username
-	<input type="username" name="username" class="form-control">
-	<p>
-	</p>
-	Email
-	<input type="email" name="email" class="form-control">
-	<p>
-	</p>
-	Password
-	<input type="password" name="password" class="form-control">
-	<p>
-	</p>
-	DATE OF BIRTH
-	<input type="date" name="DATE" class="form-control">
-	<p>
-	</p>
-	Teaching Preference
-	  <input type="radio" id="School" name="EDUCATION" value="School">
-	  <label for="School">School</label><br>
-	  <input type="radio" id="Junior College" name="EDUCATION" value="Junior College">
-	  <label for="Junior College">Junior College</label><br>
-	  <input type="radio" id="University" name="EDUCATION" value="University">
-	  <label for="University">University</label><br>
+	<input type="text" name="name" class="form-control" placeholder="Name" required>
+
+    <input type="username" name="username" class="form-control" placeholder="Username">
+
+    <input type="email" name="email" class="form-control" placeholder="Email" required>
+    
+	<input type="password" name="password" class="form-control" placeholder="Password" required>
+    
+    <h3>Current Education</h3>
+            <div>
+                <input type="radio" id="School" name="EDUCATION" value="School">
+                <label for="School">School</label><br>
+            </div>
+            <div>
+                <input type="radio" id="Junior College" name="EDUCATION" value="Junior College">
+                <label for="Junior College">Junior College</label><br>
+            </div>
+            <div>
+ 
+                <input type="radio" id="University" name="EDUCATION" value="University">
+                <label for="University">University</label><br>
+            </div>
 	
-	  
-	<p>
-	</p>
-	<input type="file" name="DP" VALUE="https://image.shutterstock.com/image-vector/unknown-user-profile-600w-1228715254.jpg" >
-	<p>
-	</p>
-	Profile Picture.
-	<input type="submit">
-	<p>
-	</p>
+	<div class="picture-upload">
+ 
+        <h3>Profile Picture</h3>
+        <input class="hide file-input" type="file" name="DP"
+            VALUE="https://image.shutterstock.com/image-vector/unknown-user-profile-600w-1228715254.jpg">
+        <div class="submit">
+            <button type="button" class="upload-file">Upload </button>
+		</div>
+		<img src="" alt="" class="profile-picture">
+
+
+    </div>
+
+    <div class="submit">
+        <input type="submit">
+    </div>
 </form>
 </div>
 </div>
-
+<script src="/js/index.js"></script>
+</body>
+ 
+</html>
