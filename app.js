@@ -153,6 +153,20 @@ app.get('/home',function(req,res){
 	res.render("homepage");
 })
 		
+
+//template engine
+app.set('view engine', 'ejs');
+
+//static files
+app.use(express.static('./Tutor-Connect'));
+
+
+var stud = require('./models/studentController');
+stud(app);
+/*var student = require('./models/studentController.js');
+app.use('/students', student);*/
+
+
 app.listen(process.env.PORT || 3000,function(){
 	console.log("server started turotpick");
 })

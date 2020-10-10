@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>search tutor</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+
+  console.log(document.getElementById("#amount"));
+  </script>
+
+</head>
+<body>
+	
+	<h2>ENTER DETAILS</h2>
+
+	<form id="student" action="/student">
+		<label  for="subject">Which subject would you like a tutor for?</label>
+		<select name="subject" id="subject">
+		  <option value="math">Math</option>
+		  <option value="physics">Physics</option>
+		  <option value="chemistry">Chemistry</option>
+		  <option value="dance">Dance</option>
+		</select>
+			
+		
+
+		<br><br>
+		<label  for="rate">Tutor Hourly rate</label>
+		<select name="rate" id="rate">
+		  <option value="100">100</option>
+		  <option value="200">200</option>
+		  <option value="300">300</option>
+		  <option value="500">500</option>
+		</select>
+
+		
+		<br><br>
+
+		<label  for="exam">Select board/exam</label>
+		<select name="exam" id="exam">
+		  <option value="ICSE">ICSE</option>
+		  <option value="CBSE">CBSE</option>
+		  <option value="JEE">JEE</option>
+		  <option value="NEET">NEET</option>
+		</select>
+
+		<br><br>
+
+		
+
+		<p>When are you available for your lessons?</p><br>
+		<input type="checkbox" id="sun" name="sun" value="sun">
+		  <label for="sun"> Sunday</label><br>
+		  <input type="checkbox" id="mon" name="mon" value="mon">
+		  <label for="mon">  Monday</label><br>
+		  <input type="checkbox" id="tue" name="tue" value="tue">
+		  <label for="tue"> Tuesday</label><br>
+		  <input type="checkbox" id="wed" name="wed" value="wed">
+		  <label for="wed"> Wednesday</label><br>
+		  <input type="checkbox" id="thu" name="thu" value="thu">
+		  <label for="thu"> Thursday</label><br>
+		  <input type="checkbox" id="fri" name="fri" value="fri">
+		  <label for="fri"> Friday</label><br>
+		  <input type="checkbox" id="sat" name="sat" value="sat">
+		  <label for="sat"> Saturday</label><br>
+		  
+
+		<br><br>
+		<p>Any gender preference? </p><br>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label><br>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br>
+		<input type="radio" id="any" name="gender" value="any">
+		<label for="any">No preference</label>
+
+		<br><br>
+		<p>Tutor age preference</p>
+		<p>
+		  <label for="amount">Price range:</label>
+		  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+		</p>
+		 
+		<div id="slider-range"></div>
+
+		<label  for="level">Select level</label>
+		<select name="level" id="level">
+		  <option value="basics">Basics</option>
+		  <option value="intermediate">Intermediate</option>
+		  <option value="advanced">Advanced</option>
+		</select>
+
+
+		
+
+		
+		<br><br>
+
+		<button type="submit"> Search tutors! </button>
+
+
+
+
+	</form>
+	
+	
+		
+
+
+</body>
+
+
+</html>
