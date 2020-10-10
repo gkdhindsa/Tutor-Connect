@@ -54,7 +54,7 @@ module.exports = function(app){
 	app.get('/student', function(req,res){
 
 		//var client = new MongoClient(uri, { useNewUrlParser: true});
-		console.log(req.query.subject);
+		console.log(req.query);
 
 		//searchTutor(req, res, client);
 
