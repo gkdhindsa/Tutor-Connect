@@ -62,7 +62,7 @@
 
     <form id="student" action="/student">
       <label for="subject">Which subject would you like a tutor for?</label>
-      <select name="subject" id="subject">
+      <select name="subject" id="subject" class="form-control">
         <option value="math">Math</option>
         <option value="physics">Physics</option>
         <option value="chemistry">Chemistry</option>
@@ -75,10 +75,10 @@
       <label for="rate">
         <h3>Tutor Hourly rate</h3>
       </label>
-      <div> <label for="maxrate">Minimum rate: </label>
+      <div> <label for="maxrate">Minimum rate: </label><br>
         <input type="number" id="minrate" name="minrate" min="1" max="1000" class="form-control"></div>
       <div>
-        <label for="maxrate">Maximum rate: </label>
+        <label for="maxrate">Maximum rate: </label><br>
         <input type="number" id="maxrate" name="maxrate" min="1" max="1000" class="form-control">
       </div>
       <h3>Any gender preference? </h3>
@@ -100,7 +100,7 @@
 
 
       <label for="exam">Select board/exam</label>
-      <select name="exam" id="exam">
+      <select name="exam" id="exam" class="form-control">
         <option value="ICSE">ICSE</option>
         <option value="CBSE">CBSE</option>
         <option value="JEE">JEE</option>
@@ -159,19 +159,19 @@
         <input type="radio" id="any" name="gender" value="any">
         <label for="any">No preference</label>
       </div>
-
+<h3>Any age preferences?</h3>
       <div>
-        <label for="minage">Minimum age: </label>
-        <input type="number" id="minage" name="minage" min="1" max="100">
+        <label for="minage">Minimum age: </label><br>
+        <input type="number" id="minage" name="minage" min="1" max="100" class="form-control">
       </div>
       <div>
-        <label for="maxage">Maximum age: </label>
-        <input type="number" id="maxage" name="maxage" min="1" max="100">
+        <label for="maxage">Maximum age: </label><br>
+        <input type="number" id="maxage" name="maxage" min="1" max="100" class="form-control">
       </div>
 
 
       <label for="level" class="some">Select level</label>
-      <select name="level" id="level">
+      <select name="level" id="level" class="form-control">
         <option value="basics">Basics</option>
         <option value="intermediate">Intermediate</option>
         <option value="advanced">Advanced</option>

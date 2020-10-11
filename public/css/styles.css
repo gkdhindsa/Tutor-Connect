@@ -13,6 +13,7 @@ body{
     padding: 0;
     background-color: rgb(256,256,256,0.5);
     z-index:99 ;
+    border-bottom: 5px solid rgb(50,6,5, 0.5);
 }
 .nav, .navv{
     display: flex;
@@ -25,6 +26,7 @@ body{
     font-weight: 900;
     font-size: 1rem;
     color: #161616;
+    padding: 0.5rem 1rem;
 }
 .nav>ul, .navv>ul{
     list-style-type: none;
@@ -39,7 +41,6 @@ body{
     padding: 0.5rem 1rem;
     background-color:#320605;
     border-radius:5px;
-    
     border: none;
 }
 
@@ -138,4 +139,8 @@ input[type="file"]{
 .card{
     margin-bottom: 1rem;
  
+}
+
+select{
+    width: 100%;
 }
