@@ -1,181 +1,202 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tutor Pick</title>
+  <title>Tutor Pick</title>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-      }
+    $(function () {
+      $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 500,
+        values: [75, 300],
+        slide: function (event, ui) {
+          $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+      });
+      $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+        " - $" + $("#slider-range").slider("values", 1));
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-  } );
 
-  console.log(document.getElementById("#amount"));
+    console.log(document.getElementById("#amount"));
   </script>
- <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
 </head>
+
 <body>
-    <div class="navbar-container">
-        <nav class="nav">
-            <span class="brand">
-                TuConnect
-            </span>
-            <ul>
-                <li>
-                    <a href="/logout" class="nav-link">
+  <div class="navbar-container">
+    <nav class="nav">
+      <span class="brand">
+        TuConnect
+      </span>
+      <ul>
+        <li>
+          <a href="/logout" class="nav-link">
 
-                        Logout</a>
-                </li>
+            Logout</a>
+        </li>
 
-            </ul>
+      </ul>
 
-        </nav>
-    </div>
-    <div class="container">
-        	
-	<h1>Your Preferences</h1>
+    </nav>
+  </div>
+  <div class="container">
 
-	<form id="student" action="/student">
-		<label  for="subject">Which subject would you like a tutor for?</label>
-		<select name="subject" id="subject">
-		  <option value="math">Math</option>
-		  <option value="physics">Physics</option>
-		  <option value="chemistry">Chemistry</option>
-		  <option value="dance">Dance</option>
-		</select>
-			
-		
+    <h1>Your Preferences</h1>
 
-		<br><br>
-		<label  for="rate">Tutor Hourly rate</label>
-		<select name="rate" id="rate">
-		  <option value="100">100</option>
-		  <option value="200">200</option>
-		  <option value="300">300</option>
-		  <option value="500">500</option>
-		</select>
-
-		
-		<br><br>
-
-		<label  for="exam">Select board/exam</label>
-		<select name="exam" id="exam">
-		  <option value="ICSE">ICSE</option>
-		  <option value="CBSE">CBSE</option>
-		  <option value="JEE">JEE</option>
-		  <option value="NEET">NEET</option>
-		</select>
-
-		<br><br>
-
-		
-
-        <h3>When are you available for your lessons?</h3>
-        <div>
-            <input type="checkbox" id="sun" name="sun" value="sun">
-		  <label for="sun"> Sunday</label>
-        </div>
-        <div>
-            
-		  <input type="checkbox" id="mon" name="mon" value="mon">
-		  <label for="mon">  Monday</label>
-        </div>
-        <div>
-            
-		  <input type="checkbox" id="tue" name="tue" value="tue">
-		  <label for="tue"> Tuesday</label>
-        </div>
-        <div>
-            
-		  <input type="checkbox" id="wed" name="wed" value="wed">
-		  <label for="wed"> Wednesday</label>
-        </div>
-        <div>
-            <input type="checkbox" id="thu" name="thu" value="thu">
-            <label for="thu"> Thursday</label></div>
-		
-		 <div>
-            <input type="checkbox" id="fri" name="fri" value="fri">
-            <label for="fri"> Friday</label>
-         </div>
-		<div>
-            <input type="checkbox" id="sat" name="sat" value="sat">
-            <label for="sat"> Saturday</label>
-            
-        </div>
-        <h3>Any gender preference? </h3>
-        <div>
-            <input type="radio" id="male" name="gender" value="male">
-		<label for="male">Male</label>
-        </div>
-        <div>
-            
-		<input type="radio" id="female" name="gender" value="female">
-		<label for="female">Female</label>
-        </div>
-        <div>
-            
-		<input type="radio" id="any" name="gender" value="any">
-		<label for="any">No preference</label>
-        </div>
-
-		<div>
-		  <label for="amount" class="some">Price range:</label>
-		  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold; " class="some">
-        </div>
-		 
-		<div id="slider-range"></div>
-
-		<label  for="level" class="some">Select level</label>
-		<select name="level" id="level">
-		  <option value="basics">Basics</option>
-		  <option value="intermediate">Intermediate</option>
-		  <option value="advanced">Advanced</option>
-		</select>
+    <form id="student" action="/student">
+      <label for="subject">Which subject would you like a tutor for?</label>
+      <select name="subject" id="subject">
+        <option value="math">Math</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="dance">Dance</option>
+      </select>
 
 
-		
 
-	
-<div class="submit">
-    <button type="submit"> Search tutors! </button>
-</div>
+      <br><br>
+      <label for="rate">
+        <h3>Tutor Hourly rate</h3>
+      </label>
+      <div> <label for="maxrate">Minimum rate: </label>
+        <input type="number" id="minrate" name="minrate" min="1" max="1000" class="form-control"></div>
+      <div>
+        <label for="maxrate">Maximum rate: </label>
+        <input type="number" id="maxrate" name="maxrate" min="1" max="1000" class="form-control">
+      </div>
+      <h3>Any gender preference? </h3>
+      <div> <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label></div>
+      <div>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+      <div>
+        <input type="radio" id="any" name="gender" value="any">
+        <label for="any">No preference</label>
+
+      </div>
 
 
 
 
 
-	</form>
-	
-	
-		
-    </div>
+      <label for="exam">Select board/exam</label>
+      <select name="exam" id="exam">
+        <option value="ICSE">ICSE</option>
+        <option value="CBSE">CBSE</option>
+        <option value="JEE">JEE</option>
+        <option value="NEET">NEET</option>
+      </select>
+
+      <br><br>
 
 
-    <script src="/js/index.js"></script>
+
+      <h3>When are you available for your lessons?</h3>
+      <div>
+        <input type="checkbox" id="sun" name="sun" value="sun">
+        <label for="sun"> Sunday</label>
+      </div>
+      <div>
+
+        <input type="checkbox" id="mon" name="mon" value="mon">
+        <label for="mon"> Monday</label>
+      </div>
+      <div>
+
+        <input type="checkbox" id="tue" name="tue" value="tue">
+        <label for="tue"> Tuesday</label>
+      </div>
+      <div>
+
+        <input type="checkbox" id="wed" name="wed" value="wed">
+        <label for="wed"> Wednesday</label>
+      </div>
+      <div>
+        <input type="checkbox" id="thu" name="thu" value="thu">
+        <label for="thu"> Thursday</label></div>
+
+      <div>
+        <input type="checkbox" id="fri" name="fri" value="fri">
+        <label for="fri"> Friday</label>
+      </div>
+      <div>
+        <input type="checkbox" id="sat" name="sat" value="sat">
+        <label for="sat"> Saturday</label>
+
+      </div>
+      <h3>Any gender preference? </h3>
+      <div>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+      </div>
+      <div>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+      <div>
+
+        <input type="radio" id="any" name="gender" value="any">
+        <label for="any">No preference</label>
+      </div>
+
+      <div>
+        <label for="minage">Minimum age: </label>
+        <input type="number" id="minage" name="minage" min="1" max="100">
+      </div>
+      <div>
+        <label for="maxage">Maximum age: </label>
+        <input type="number" id="maxage" name="maxage" min="1" max="100">
+      </div>
+
+
+      <label for="level" class="some">Select level</label>
+      <select name="level" id="level">
+        <option value="basics">Basics</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+
+
+
+
+
+      <div class="submit">
+        <button type="submit"> Search tutors! </button>
+      </div>
+
+
+
+
+
+    </form>
+
+
+
+  </div>
+
+
+  <script src="/js/index.js"></script>
 </body>
 
 

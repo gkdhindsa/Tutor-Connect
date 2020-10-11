@@ -43,7 +43,7 @@ function isteacher(req,res,next){
 }
 
 
-
+var username;
 var upload = multer({ storage: storage }); 
 mongoose.connect('mongodb+srv://abhishek:abhishek54321@cluster0.dfvfh.mongodb.net/<dbname>?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true})
 
@@ -183,7 +183,8 @@ app.get('/student/home',function(req,res){
 
 app.get('/teacher/home',function(req,res){
 	res.render("homepageTutor");
-	console.log(req.teacheruser._id);
+	username = req.teacheruser;
+	console.log(req.teacheruser);
 })
 		
 
@@ -194,8 +195,8 @@ app.get('/teacher/home',function(req,res){
 //app.use(express.static('./Tutor-Connect'));
 
 
-var stud = require('./models/studentController');
-stud(app);
+/*var stud = require('./models/studentController');
+stud(app);*/
 /*var student = require('./models/studentController.js');
 app.use('/students', student);*/
 
@@ -223,6 +224,162 @@ app.get('/tutor/:tutorid',function(req,res){
 		}
 	})
 })
+
+
+
+
+
+const MongoClient = require("mongodb").MongoClient;
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+const uri = 'mongodb+srv://abhishek:abhishek54321@cluster0.dfvfh.mongodb.net/<dbname>?retryWrites=true&w=majority';
+
+//mongoose.connect(uri);
+
+var tutorSchema = new mongoose.Schema({
+	username: String,
+	subject: String,
+	rate: Number,
+	exam: String,
+	days: [String],
+	gender: String,
+	age: Number,
+	level: String,
+});
+
+var Tutor = mongoose.model('Tutor', tutorSchema);
+
+//function to retrieve relevant tutors
+function searchTutor(req, res){
+	console.log('in function now');
+	var client = new MongoClient(uri, { useNewUrlParser: true});
+	var sub = req.query.subject;
+	var minrate = req.query.minrate;
+	var maxrate = req.query.maxrate;
+	var exam = req.query.exam;
+	var dayData1 = [];
+	if("mon" in req.query)
+			dayData1.push("mon");
+		if("tue" in req.query)
+			dayData1.push("tue");
+		if("wed" in req.query)
+			dayData1.push("wed");
+		if("thu" in req.query)
+			dayData1.push("thu");
+		if("fri" in req.query)
+			dayData1.push("fri");
+		if("sat" in req.query)
+			dayData1.push("sat");
+		if("sun" in req.query)
+			dayData1.push("sun");
+		console.log(dayData1);
+
+	var level = req.query.level;
+	var gender = req.query.gender;
+	var minage = req.query.minage;
+	var maxage = req.query.maxage;
+
+	client.connect(err => {
+		collection = client.db("<dbname>").collection("currentTutor");
+		console.log("success");
+
+		collection.find({subject: sub}).toArray(
+							function(err, data){
+			if(err) throw err;
+			console.log(data);
+			
+			//res.render('./tutorsearch.ejs', {tutorData: data});
+
+
+		});
+		//res.send("yo");
+
+	});
+
+
+}
+
+
+
+
+
+app.get('/student', function(req,res){
+
+		//var client = new MongoClient(uri, { useNewUrlParser: true});
+		console.log(req.query);
+
+		//searchTutor(req, res, client);
+		
+		searchTutor(req,res);
+
+		res.render('./student.ejs');
+
+	});
+
+	app.get('/update', function(req,res){
+		res.render('./tutorUpdate.ejs');
+	});
+
+	app.post('/update', urlencodedParser,  function(req, res){
+		console.log(req.body);
+		var data = req.body;
+		var dayData = [];
+		if("mon" in data)
+			dayData.push("mon");
+		if("tue" in data)
+			dayData.push("tue");
+		if("wed" in data)
+			dayData.push("wed");
+		if("thu" in data)
+			dayData.push("thu");
+		if("fri" in data)
+			dayData.push("fri");
+		if("sat" in data)
+			dayData.push("sat");
+		if("sun" in data)
+			dayData.push("sun");
+		console.log(dayData);
+		//console.log(res.locals.CurrentUser);
+		var updateData = new Tutor({
+			username: data.username,
+			subject: data.subject,
+			rate: data.rate,
+			exam: data.exam,
+			days: dayData,
+			gender: data.gender,
+			age: data.age,
+			level: data.level
+
+
+		});
+		var collection;
+
+		var client = new MongoClient(uri, { useNewUrlParser: true});
+		client.connect(err => {
+
+			  collection = client.db("<dbname>").collection("currentTutor");
+			  
+			  console.log("success");
+
+			  	collection.insertOne(updateData, (err, result) => {
+				        if(err) {
+				            return res.status(500).send(err);
+				            console.log(err);
+				        }
+
+				 
+				        	console.log("done");
+				
+	        });
+			  	client.close();
+		});
+
+	
+
+		res.render('./homepageTutor.ejs');
+
+	});
+
+
 
 
 app.listen(process.env.PORT || 3000,function(){

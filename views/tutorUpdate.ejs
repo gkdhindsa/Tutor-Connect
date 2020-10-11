@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!--Google fonts-->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<!--Custom CSS-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript" src="../stud.js"></script>
+	<title>Tutor Connect</title>
+</head>
+
+<body>
+	<div class="navbar-containerr">
+        <div class="navv">
+            <span class="brand">
+                TuConnect
+            </span>
+            <ul >
+                <li>
+                    <a href="/logout" class="nav-link">
+                        Logout</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+<div class="container">
+    <h1>ENTER DETAILS</h1>
+    <form id="tutor" action="/update" method="post">	
+		<input type="text" name="username" class="form-control"  required placeholder="Enter username to confirm "/>
+
+		<label  for="subject"><h3>Which subject would you like to teach?</h3></label>
+		<select name="subject" id="subject">
+		  <option value="math">Math</option>
+		  <option value="physics">Physics</option>
+		  <option value="chemistry">Chemistry</option>
+		  <option value="dance">Dance</option>
+		</select>
+			
+  		<input type="number" id="rate" name="rate" min="1" max="1000" placeholdee="Rate" class="form-control">
+  	
+		<label  for="exam"><h3>Select board/exam</h3></label>
+		<select name="exam" id="exam">
+		  <option value="ICSE">ICSE</option>
+		  <option value="CBSE">CBSE</option>
+		  <option value="JEE">JEE</option>
+		  <option value="NEET">NEET</option>
+		</select>
+
+
+        <h3>When are you available for your lessons?</h3>
+        <div>	<input type="checkbox" id="sun" name="sun" value="sun">
+            <label for="day"> Sunday</label>
+        </div>
+        <div>
+            <input type="checkbox" id="mon" name="mon" value="mon">
+            <label for="day">  Monday</label>
+        </div>
+        <div>
+            
+		  <input type="checkbox" id="tue" name="tue" value="tue">
+		  <label for="day"> Tuesday</label>
+        </div>
+        <div>
+            
+		  <input type="checkbox" id="wed" name="wed" value="wed">
+		  <label for="day"> Wednesday</label>
+        </div>
+    <div>
+        
+		  <input type="checkbox" id="thu" name="thu" value="thu">
+		  <label for="day"> Thursday</label>
+    </div>
+    <div>
+        <input type="checkbox" id="fri" name="fri" value="fri">
+        <label for="day"> Friday</label>
+    </div>
+    <div>
+        	
+		  <input type="checkbox" id="sat" name="sat" value="sat">
+		  <label for="day"> Saturday</label>
+		  
+    </div>
+
+	
+
+    <h3>Gender:</h3>
+    <div><input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label></div>
+    <div><input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br>
+		</div>
+		
+		
+	
+		
+		<label for="age"><h3>Current age:</h3> </label>
+  		<input type="number" id="age" name="age" min="1" max="100">
+  	
+		<label  for="level"><h3>Select level</h3></label>
+		<select name="level" id="level">
+		  <option value="basics">Basics</option>
+		  <option value="intermediate">Intermediate</option>
+		  <option value="advanced">Advanced</option>
+		</select>
+
+
+<div class="submit">
+    <input type="submit">  </input>
+</div>
+	
+
+
+
+
+	</form>
+</div>
+	
+
+
+	
+	
+	<script src="/js/index.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+	</script>
+</body>
+
+</html>
