@@ -7,14 +7,14 @@ body{
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-.navbar-container{
+.navbar-container, .navbar-containerr{
     position: fixed;
     width: 100%;
     padding: 0;
     background-color: rgb(256,256,256,0.5);
     z-index:99 ;
 }
-.nav{
+.nav, .navv{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,14 +26,14 @@ body{
     font-size: 1rem;
     color: #161616;
 }
-.nav>ul{
+.nav>ul, .navv>ul{
     list-style-type: none;
 }
-.nav>ul>li{
+.nav>ul>li, .navv>ul>li{
     display: inline;
     padding: 0 0.5rem;
 }
-.nav>ul>li>a, button, input[type="submit"]{
+.nav>ul>li>a, .navv>ul>li>a, button, input[type="submit"]{
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
@@ -122,4 +122,14 @@ input[type="file"]{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+}
+
+.img-thumbnail{
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
+.card{
+    margin-bottom: 1rem;
+ 
 }

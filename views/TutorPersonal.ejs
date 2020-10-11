@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Bootstrap CSS-->
+
+	<!--Google fonts-->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<!--Custom CSS-->
+	<link rel="stylesheet" href="/css/styles.css">
+	<title>Tutor Connect</title>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="nav">
+            <span class="brand">
+                TuConnect
+            </span>
+            <ul >
+                <li>
+                    <a href="/logout" class="nav-link">
+
+                        Logout</a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </div>
+    <div class="container">
+        <h1><%=teacher.name%></h1>
+      
+        <img src="data:image/<%=teacher.DP.contentType%>;base64, <%=teacher.DP.data.toString('base64')%>" class="img-thumbnail"  >
+
+        <div class="text-left d-block mt-3" style="width: 450px; max-width: 100%;"> <h2>Educational Background</h2>
+            <p>To be filled</p>
+            <h2>About Me</h2>
+            <p>To be filled</p>
+            <h2>Hourly charges</h2>
+            <p>To be filled</p>
+            <h2>Avaliable Timings</h2>
+            <p>To be filled</p>
+            <h2>Level Of Teaching</h2>
+            <p><%=teacher.CurrTeaching%></p>
+            <h2>Contact Details</h2>
+             
+            <p>Email: <%=teacher.email%></p></div>
+    </div>
+    
+</body>
+</html>
